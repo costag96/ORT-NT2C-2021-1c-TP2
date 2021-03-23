@@ -6,10 +6,20 @@
             console.log("Hola!")
 
             let nombres = ['Adriana', 'Benito', 'Claudia', 'Daniel', 'Estefania', 'Fernando','Gabriela','Hugo']
-            nombres.forEach(function(nombre) {
-                console.log(nombre)
+            
+            const nombreConLongitud = agregarLongitud(nombres);
+            console.log(JSON.stringify(nombreConLongitud));
+            
+            function agregarLongitud(vector) {
+                const respuesta = vector.map(function(nombre) {
+                    const obj = {
+                        nombre: nombre,
+                        longitud: nombre.length
+                    };
+                    return obj;
+                });
+                return respuesta;
             }
-            )
 
         </script>
     </body>
